@@ -71,7 +71,9 @@
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(id)asset;
 @end
 
-
+/**
+ *  照片选择器的Viewcontroller
+ */
 @interface TZAlbumPickerController : UIViewController
 
 @end

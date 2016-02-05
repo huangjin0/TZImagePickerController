@@ -78,6 +78,7 @@
             [self.view addSubview:_tipLable];
             
             _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(observeAuthrizationStatusChange) userInfo:nil repeats:YES];
+            
         } else {
             [self pushToPhotoPickerVc];
         }
@@ -85,6 +86,9 @@
     return self;
 }
 
+/**
+ *  如果未得到授权的
+ */
 - (void)observeAuthrizationStatusChange {
     if ([[TZImageManager manager] authorizationStatusAuthorized]) {
         [self pushToPhotoPickerVc];
@@ -94,6 +98,9 @@
     }
 }
 
+/**
+ *  推出照片选择器controller
+ */
 - (void)pushToPhotoPickerVc {
     _pushToPhotoPickerVc = YES;
     if (_pushToPhotoPickerVc) {
